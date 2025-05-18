@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import '../assets/styles/eventcard.scss'
+
 
 export default function EventCard({ festivals }){
 
@@ -9,7 +10,7 @@ export default function EventCard({ festivals }){
 
         const festivalNAME = festival._embedded?.attractions?.[0]?.name
         return(
-            <article key={festival.id}>
+            <article className="eventkort" key={festival.id}>
                 <img src={festival.images[0].url} alt={festivalNAME} />
                 <h2>{festivalNAME}</h2>
                 <Link to={`event/${festival.id}`}>Les mer om {festivalNAME}</Link>

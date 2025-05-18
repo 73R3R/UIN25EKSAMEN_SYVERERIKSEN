@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react'
 function App() {
 
   const [festivals, setFestivals] = useState([])
+  const [tickets, setTickets] = useState([])
         
 //ID i HomeFestivals, er hentet fra https://developer.ticketmaster.com/api-explorer/v2/
   const HomeFestivals = [
@@ -19,34 +20,35 @@ function App() {
     "Z698xZb_Z17q3qg"
   ]
 
-  const fetchFestivals = async () => {
-  try {
-      const results = []
-
-      for (const id of HomeFestivals) {
-      const response = await fetch(`https://app.ticketmaster.com/discovery/v2/events/${id}.json?apikey=yWdCXPTsPw3L7xhXkdX8QHbiLgkrx7Fl`)
-      const data = await response.json()
-      results.push(data)
-      }
-      setFestivals(results)
-  } catch (error) {
-      console.error("Feil ved henting", error)
-  }
-  }
+ const fetchFestivals = async () => {
+  fetch(`https://app.ticketmaster.com/discovery/v2/events?apikey=yWdCXPTsPw3L7xhXkdX8QHbiLgkrx7Fl&id=Z698xZb_Z16v7eGkFy&id=Z698xZb_Z17q339&id=Z698xZb_Z17qfao&id=Z698xZb_Z17q3qg&locale=*`)
+  .then((response) => response.json())
+  .then((data) => setFestivals(data._embedded.events))
+  .catch((error) => console.error("4festivalsfecth har gått galt", error))
+ }
 
   useEffect(() => {
     fetchFestivals()
   }, [])
 
+
+  const fetchTickets = async () => {
+    setTimeout(() => {
+    fetch(`https://app.ticketmaster.com/discovery/v2/events?apikey=yWdCXPTsPw3L7xhXkdX8QHbiLgkrx7Fl&attractionId=K8vZ917oWOV&attractionId=K8vZ917K7fV&attractionId=K8vZ917bJC7&attractionId=K8vZ917_YJf&locale=*&size=23`)
+    .then((response) => response.json())
+    .then((data) => setTickets(data._embedded.events))
+    .catch((error) => console.error("4festivalsfecth har gått galt", error))
+  }, 5000)} //5 sek delay for å unngå 429 feilkode
+
   useEffect(() => {
-    console.log(festivals)
-  }, [festivals])
+    fetchTickets()
+  }, [])
 
   return (
     <Layout>
       <Routes>
         <Route path="/" element={<Home festivals={festivals} />} />
-        <Route path="/event/:id" element={<EventPage festivals={festivals} />} />
+        <Route path="/event/:id" element={<EventPage festivals={festivals} tickets={tickets} />} />
         <Route path="/category/:slug" element={<CategoryPage />} />
         <Route path="/dashboard" element={<Dashboard/>} />
       </Routes>

@@ -1,0 +1,35 @@
+.eventsidekort{
+    width: 400px;
+    text-align: left;
+    height: 600px;
+    img{
+        width: 400px;
+        height: 300px;
+    }
+    h2{
+        height: 100px;
+    }
+    article{
+        display: flex;
+        justify-content: space-between;
+    }
+    button:hover{
+        background-color: darkgray;
+        color: white;
+    }
+}
+.eventinfo{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    .sosiale{
+        display: flex;
+        flex-direction: column;
+    }
+}
+.artistkortene{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: left;
+}

@@ -1,0 +1,13 @@
+Dette er eksamensinnleveringen til 73R3R, SYver Eriksen kandidatnummer 233590
+
+Er kun et medlem i denne gruppen
+
+startet eksamen med et mål om å gjøre A/B kravene. Dette gikk sidelengs som er synlig basert på innhold i mappen, sanity delen er tom 
+ettersom jeg aldri kom så langt.
+
+Har hatt veldig mye problemer med 429 og mye annet både kodemessig og utenom som har dratt ned det jeg fikk til, 
+eneste jeg kan huske mangler for C krav er like funksjonen på eventer. Css er også litt rushet. er også en del komponenter 
+som skulle vært gjenbrukt litt mer enn de er.
+
+repos:
+https://github.com/73R3R/UIN25EKSAMEN_SYVERERIKSEN.git

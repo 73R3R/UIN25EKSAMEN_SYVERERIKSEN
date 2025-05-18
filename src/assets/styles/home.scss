@@ -1,0 +1,16 @@
+section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    gap: 3rem;
+}
+.byfiltrering{
+    display: flex;
+    justify-content: center;
+    padding: 3rem;
+    gap: 2rem;
+    button:hover{
+        background-color: darkgray;
+        color: white;
+    }
+}

@@ -1,3 +1,5 @@
+import '../assets/styles/artistcard.scss'
+
 export default function ArtistCard({ festivals, id }) {
 
     //console.log("artistkortet her", festivals)
@@ -10,14 +12,16 @@ export default function ArtistCard({ festivals, id }) {
     }
 
     return (
+        <>
+        <h2>Artister:</h2>
         <section>
-            <h2>Artister:</h2>
             {artist.map((artist) => (
-                <article key={artist.id}>
+                <article className='artistkort' key={artist.id}>
                     <img src={artist.images[0].url}/>
                     <h3>{artist.name}</h3>
                 </article>
             ))}
         </section>
+        </>
     )
 }

@@ -1,0 +1,21 @@
+section{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
+    .catKort{
+        width: 400px;
+        text-align: left;
+        background-color: rgb(238, 238, 238);
+        img{
+            width: 400px;
+            height: 300px;
+        }
+        h2{
+            padding: 1rem;
+        }
+    }
+}
+h1{
+    text-align: left;
+}

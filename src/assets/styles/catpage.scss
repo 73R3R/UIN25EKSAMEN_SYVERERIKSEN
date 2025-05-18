@@ -1,0 +1,10 @@
+.catpage{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    form{
+        h2{
+            font-size: 2rem;
+        }
+    }
+}

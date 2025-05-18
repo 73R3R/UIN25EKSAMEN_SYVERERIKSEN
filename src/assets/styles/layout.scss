@@ -1,0 +1,41 @@
+header {
+    background-color: white;
+    padding: 2rem;
+    border-bottom: 2px solid grey;
+    nav{
+        display: flex;
+        gap: 15rem;
+        justify-content: center;
+        a{
+            color: black;
+            font-weight: 600;
+            font-size: 20px;
+        }
+        .Logo{
+            font-size: 2rem;
+        }
+        ul{
+            list-style: none;
+            display: flex;
+            margin: 0;
+            gap: 5rem;
+            li{
+                a{
+                    color: black;
+                }
+            }
+        }
+    }
+}
+main{
+    max-width: 1300px;
+    margin: auto;
+
+}
+footer{
+    margin: 5rem;
+    a{
+        text-decoration: none;
+        color: black;
+    }
+}
